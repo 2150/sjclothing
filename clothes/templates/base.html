@@ -1,0 +1,59 @@
+﻿{% load static %}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+ 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S.J Clothing</title>
+        <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"> <!-- https://fontawesome.com/ -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+        <link rel="stylesheet" href="{% static 'css/tooplate-wave-cafe.css' %}">
+        <!--
+        Tooplate 2121 Wave Cafe
+        https://www.tooplate.com/view/2121-wave-cafe
+        -->
+
+</head>
+<body>
+    <div class="tm-container2">
+        <div class="tm-center">
+           
+
+            <div class="tm-black-bg tm-contact-form-container tm-align-right">
+                
+                {% block content_1 %}
+                {% endblock content_1 %}
+            </div>
+
+                <div id="cartDetails" class="tm-page-content tm-align-right">
+
+                    <div class="tm-black-bg tm-contact-form-container  tm-align-right">
+                        <div>
+                            {% block content_2 %}
+                            {% endblock content_2 %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="tm-site-footer2">
+            <p class="tm-black-bg tm-footer-text">
+                Copyright 2020 S.J Clothing
+                | Contact Developer: <a href="https://www.linkedin.com/in/uram-mnisi-software-developer/" class="tm-footer-link" rel="sponsored" target="_parent">Click here</a>
+            </p>
+        </footer>
+
+
+        <!-- Background video -->
+        <div class="tm-video-wrapper">
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+            <video autoplay muted loop id="tm-video">
+                <source src="{% static 'video/skating.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+</body>
+</html>
