@@ -3,39 +3,48 @@
 
 
 {% block content_1 %}
-    <img src="{% static 'img/caps/psd_cap_mockup.png' %}" />
+
+<img src="/{{auth_context.choosen_item_path}}" alt="{{auth_context.choosen_item_category}}:&nbsp;&nbsp;&nbsp;&nbsp;{{auth_context.choosen_item_name}}" />
+
 {% endblock content_1 %}
 
 {% block content_2 %}
-<form action="{% url 'login' %}" method="POST" id="contact-form">
+
+<form action="{% url 'bought' %}?choosen_item_category={{auth_context.choosen_item_category}}&itp={{auth_context.itp}}&choosen_item_name={{auth_context.choosen_item_name}}&choosen_item_path={{auth_context.choosen_item_path}}" method="POST" id="contact-form">
     {% csrf_token %}
 
     <div class="tm-form-group">
-        <!--<input type="select" name="email" class="tm-form-control" placeholder="Email" required="" />-->
-        How many are you buying? &nbsp;
-        <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-        </select>
+        <option value='{{auth_context.choosen_item}}'></option>
+        <option value="{{clothes.item_Name}}"></option>
+        <span class="choosen_item_category" vocab="{{auth_context.choosen_item_category}}"></span>
+
+        <fieldset>
+            <label name="price">12</label>
+            <!--<input type="select" name="email" class="tm-form-control" placeholder="Email" required="" />-->
+            How many are you buying? &nbsp;
+            <select name="num_items">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <button type="submit" class="tm-btn-primary tm-align-center">
+                Buy
+            </button>
+        </fieldset>
     </div>
     <!--<div class="tm-form-group">
         <input type="password" name="password" class="tm-form-control" placeholder="Password" required="" />
     </div>-->
 
     <div>
-        <button type="submit" class="tm-btn-primary tm-align-center">
-            Buy
-        </button>
+
     </div>
 
 
 </form>
-
-    
 
 {% endblock content_2 %}

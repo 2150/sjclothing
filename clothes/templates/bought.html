@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content_1 %}
+
+    Number of {{choosen_item_context.choosen_item_category}} Bought:&nbsp;{{choosen_item_context.choosen_item_num}}<br /><br />
+
+    <img src="/{{choosen_item_context.choosen_item_path}}" /><br /><br />
+    
+    Total Cost ZAR:&nbsp;{{choosen_item_context.total_cost}}<br />
+{% endblock content_1 %}
+
+{% block content_2 %}
+
+<form action="/" method="post">
+    {% csrf_token %}
+    <div>
+        <button type="submit" class="tm-btn-primary tm-align-right">
+            Return Home
+        </button>
+    </div>
+</form>
+
+{% endblock content_2 %}
