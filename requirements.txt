@@ -3,7 +3,7 @@ appdirs==1.4.4
 argh==0.26.2
 async-generator==1.10
 atomicwrites==1.4.0
-
+gunicorn==20.0.4 
 
 backcall==0.2.0
 backports.functools-lru-cache==1.6.1
